@@ -1,7 +1,6 @@
 <?php
   namespace Soldiers\api\helpers;
 
-
   Class routing {
 
     public $api;

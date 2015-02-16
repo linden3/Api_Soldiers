@@ -12,6 +12,10 @@
     }
 
     public function getRegimenten() {
-      $this->api->render('/blaat.php');
+      $array = array(
+        'test' => 'fackka',
+      );
+
+      echo json_encode($array);
     }
   }
