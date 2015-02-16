@@ -1,0 +1,11 @@
+{
+    "name": "root/api_soldiers",
+    "description": "A api for all the fallen soldiers in the first world war",
+    "require": {
+        "slim/slim": "~2.5"
+    },
+    "autoload": {
+        "psr-4":{
+            "Soldiers\\Api\\": "api/"
+        }
+}}
