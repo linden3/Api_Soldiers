@@ -3,8 +3,8 @@
   require "vendor/autoload.php";
 
   // Controller includes
-  use Soldiers\Api\routes\regimenten;
-  use Soldiers\Api\routes\burgers;
+  use Soldiers\Api\controllers\regimenten;
+  use Soldiers\Api\controllers\burgers;
 
   // Slim config array.
   $config = [
@@ -19,8 +19,18 @@
   $regimenten = new regimenten($api, $mysqli);
   $burger     = new burgers($api, $mysqli);
 
-  // Routes
-  $api->get('/', $regimenten->getRegimenten());
+  // Route functions
+  function getRoute($api, $route, $page, $method = 'get') {
+    if(!method_exists($app, $method)) {
+        throw new \Exception("Invalid HTTP method '{$method}'");
+    }
+    $api->$method($route, function() use($page) {
+        return $page;
+    });
+  }
+
+  // Routes Regimenenten
+  getRoute('/', $regimenten->getRegimenten());
 
   // Bootstrap the api
   $api->run();

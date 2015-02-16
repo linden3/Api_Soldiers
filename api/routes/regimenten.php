@@ -1,5 +1,5 @@
 <?php
-  namespace Soldiers\api\routes;
+  namespace Soldiers\api\controllers;
 
   class regimenten {
 
