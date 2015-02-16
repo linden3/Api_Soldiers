@@ -21,7 +21,7 @@
   $mysqli     = new mysqli('localhost','root','2fU3g5Yn','sn1145_scouts');
   $regimenten = new regimenten($api, $mysqli);
   $burger     = new burgers($api, $mysqli);
-  $route    = new routing($api) ;
+  $route      = new routing($api) ;
 
   // Routes Regimenenten
   $route->get($api, '/', $regimenten->getRegimenten());

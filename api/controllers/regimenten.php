@@ -16,6 +16,6 @@
         'test' => 'fackka',
       );
 
-      echo json_encode($array);
+      return json_encode($array, true);
     }
   }

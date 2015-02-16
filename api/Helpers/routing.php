@@ -9,7 +9,7 @@
       $this->api = $api;
     }
 
-    function get($api, $route, $page, $method = 'get') {
+    function get($api, $route, $page, $method = 'get') use($page) {
       if(!method_exists($api, $method)) {
           throw new \Exception("Invalid HTTP method '{$method}'");
       }
