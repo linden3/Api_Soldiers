@@ -18,7 +18,7 @@
       return json_encode($query, JSON_PRETTY_PRINT);
     }
 
-    public function getRegiment($id) {
+    public function getRegiment() {
       $query = $this->mysqli->query("SELECT * FROM Regimenten WHERE ID = '. $id .'")
                             ->fetch_all(MYSQLI_ASSOC);
 

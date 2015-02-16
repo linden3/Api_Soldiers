@@ -18,7 +18,7 @@
 
   // Setup some variables
   $api        = new \Slim\Slim($config);
-  $mysqli     = new mysqli('','','','timjoot143_FallenSoldiers');
+  $mysqli     = new mysqli('185.13.227.159','timjoot143_root','root1995','timjoot143_FallenSoldiers');
   $regimenten = new regimenten($api, $mysqli);
   $burger     = new burgers($api, $mysqli);
   $route      = new routing($api) ;
