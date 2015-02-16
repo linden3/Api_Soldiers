@@ -7,7 +7,7 @@
   use Soldiers\Api\controllers\burgers;
 
   // Helpers
-  use Soldiers\Api\Helpers\routing;
+  use Soldiers\Api\helpers\routing;
 
   // Slim config array.
   $config = [
@@ -21,19 +21,10 @@
   $mysqli     = new mysqli('localhost','root','2fU3g5Yn','sn1145_scouts');
   $regimenten = new regimenten($api, $mysqli);
   $burger     = new burgers($api, $mysqli);
-
-  // Route functions
-  function getRoute($api, $route, $page, $method = 'get') {
-    if(!method_exists($api, $method)) {
-        throw new \Exception("Invalid HTTP method '{$method}'");
-    }
-    $api->$method($route, function() use($page) {
-        return $page;
-    });
-  }
+  $route    = new routing($api) ;
 
   // Routes Regimenenten
-  getRoute('/', $regimenten->getRegimenten());
+  $route->get($api, '/', $regimenten->getRegimenten());
 
   // Bootstrap the api
   $api->run();
