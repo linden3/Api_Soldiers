@@ -6,6 +6,9 @@
   use Soldiers\Api\controllers\regimenten;
   use Soldiers\Api\controllers\burgers;
 
+  // Helpers
+  use Soldiers\Api\Helpers\routing;
+
   // Slim config array.
   $config = [
     'templates.path' => 'api/views',
