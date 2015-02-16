@@ -18,13 +18,14 @@
 
   // Setup some variables
   $api        = new \Slim\Slim($config);
-  $mysqli     = new mysqli('localhost','root','2fU3g5Yn','sn1145_scouts');
+  $mysqli     = new mysqli('','','','timjoot143_FallenSoldiers');
   $regimenten = new regimenten($api, $mysqli);
   $burger     = new burgers($api, $mysqli);
   $route      = new routing($api) ;
 
   // Routes Regimenenten
-  $route->get($api, '/', $regimenten->getRegimenten());
+  $route->get($api, '/regiment/:id', $regimenten->getRegiment($id));
+  $route->get($api, '/regimenten/all', $regimenten->getRegimenten());
 
   // Bootstrap the api
   $api->run();

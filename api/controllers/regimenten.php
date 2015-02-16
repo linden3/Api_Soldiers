@@ -12,10 +12,16 @@
     }
 
     public function getRegimenten() {
-      $array = array(
-        'test' => 'fackka',
-      );
+      $query = $this->mysqli->query('SELECT * FROM Regimenten')
+                            ->fetch_all(MYSQLI_ASSOC);
 
-      return json_encode($array, true);
+      return json_encode($query, JSON_PRETTY_PRINT);
+    }
+
+    public function getRegiment($id) {
+      $query = $this->mysqli->query("SELECT * FROM Regimenten WHERE ID = '. $id .'")
+                            ->fetch_all(MYSQLI_ASSOC);
+
+      return json_encode($query, JSON_PRETTY_PRINT);
     }
   }

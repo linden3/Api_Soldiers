@@ -9,12 +9,21 @@
       $this->api = $api;
     }
 
-    function get($api, $route, $page, $method = 'get') use($page) {
-      if(!method_exists($api, $method)) {
-          throw new \Exception("Invalid HTTP method '{$method}'");
-      }
-      $api->$method($route, function() use($page) {
-          return $page;
+    function get($api, $route, $page) {
+      $api->get($route, function() use($page) {
+        echo $page;
+      });
+    }
+
+    function post($api, $route, $page) {
+      $api->post($route, function() use($page) {
+        echo $page;
+      });
+    }
+
+    function put($api, $route, $page) {
+      $api->put($route, function() use($page) {
+        echo $page;
       });
     }
 
