@@ -1,8 +1,8 @@
 <?php
 
-  namespace Soldiers\Api\routes;
+  namespace Soldiers\api\routes;
 
-class test {
+class regimenten {
   public function blaat() {
     return 'Test';
   }

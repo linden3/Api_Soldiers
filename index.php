@@ -4,5 +4,5 @@
 
   use Soldiers\Api\routes\regimenten;
 
-  $test = new test();
-  echo $test->blaat();
+  $meh = new regimenten();
+  echo $meh->blaat();
