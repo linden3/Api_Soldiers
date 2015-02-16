@@ -1,7 +1,9 @@
 <?php
 
-  namespace Soldiers\Api;
+  namespace Soldiers\Api\routes;
 
-  public function test() {
+class test {
+  public function blaat() {
     return 'Test';
   }
+}
