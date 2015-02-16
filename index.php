@@ -24,7 +24,7 @@
 
   // Route functions
   function getRoute($api, $route, $page, $method = 'get') {
-    if(!method_exists($app, $method)) {
+    if(!method_exists($api, $method)) {
         throw new \Exception("Invalid HTTP method '{$method}'");
     }
     $api->$method($route, function() use($page) {
