@@ -1,5 +1,5 @@
 <?php
-  namespace Soldiers\api\routing;
+  namespace Soldiers\api\helpers;
 
 
   Class routing {
