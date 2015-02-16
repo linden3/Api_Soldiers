@@ -24,8 +24,13 @@
   $route      = new routing($api) ;
 
   // Routes Regimenenten
-  $route->get($api, '/regiment/:id', $regimenten->getRegiment($id));
-  $route->get($api, '/regimenten/all', $regimenten->getRegimenten());
+  $api->get('/regiment/:id', function($id) use ($regimenten) {
+      $regimenten->getRegiment($id);
+  });
+
+  $api->get('/regimenten/all', function() use ($regimenten) {
+      $regimenten->getRegimenten();
+  });
 
   // Bootstrap the api
   $api->run();
